@@ -10,7 +10,7 @@ export default function AddPriority() {
     async function submit(e){
         e.preventDefault();
         try{
-            await axios.post("http://localhost:8000/priority/addPriority",{
+            await axios.post("https://chatappbackend-xgh0.onrender.com/priority/addPriority",{
                 Priority_name
             })
             .then(res=>{

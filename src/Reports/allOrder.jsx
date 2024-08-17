@@ -23,7 +23,7 @@ export default function AllOrder() {
     }
     
     useEffect(() => {
-        axios.get("http://localhost:8000/order/GetOrderList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/order/GetOrderList")
             .then(res => {
                 if (res.data.success) {
                     setOrders(res.data.result);

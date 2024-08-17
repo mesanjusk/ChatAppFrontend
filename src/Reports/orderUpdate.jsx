@@ -16,7 +16,7 @@ export default function OrderUpdate() {
     });
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/order/${id}`)
+        axios.get(`https://chatappbackend-xgh0.onrender.com/order/${id}`)
             .then(res => {
                 if (res.data.success) {
                     setValues({
@@ -32,7 +32,7 @@ export default function OrderUpdate() {
     }, [id]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/order/GetOrderList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/order/GetOrderList")
             .then(res => {
                 if (res.data.success) {
                     setOrders(res.data.result);
@@ -56,7 +56,7 @@ export default function OrderUpdate() {
         };
 
 
-        axios.put(`http://localhost:8000/order/updateOrder/${id}`, updatedValues)
+        axios.put(`https://chatappbackend-xgh0.onrender.com/order/updateOrder/${id}`, updatedValues)
             .then(res => {
                 if (res.data.success) {
                     alert('Order updated successfully!');

@@ -10,7 +10,7 @@ export default function AddTask() {
     const [groupOptions, setGroupOptions] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/taskgroup/GetTaskgroupList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/taskgroup/GetTaskgroupList")
             .then(res => {
                 if (res.data.success) {
                     const options = res.data.result.map(item => item.Task_group);
@@ -25,7 +25,7 @@ export default function AddTask() {
     async function submit(e){
         e.preventDefault();
         try{
-            await axios.post("http://localhost:8000/task/addTask",{
+            await axios.post("https://chatappbackend-xgh0.onrender.com/task/addTask",{
                 Task_name, Task_group
             })
             .then(res=>{

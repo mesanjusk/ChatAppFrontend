@@ -11,7 +11,7 @@ export default function AddCustomer() {
     const [groupOptions, setGroupOptions] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/customergroup/GetCustomergroupList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/customergroup/GetCustomergroupList")
             .then(res => {
                 if (res.data.success) {
                     const options = res.data.result.map(item => item.Customer_group);
@@ -26,7 +26,7 @@ export default function AddCustomer() {
     async function submit(e){
         e.preventDefault();
         try{
-            await axios.post("http://localhost:8000/customer/addCustomer",{
+            await axios.post("https://chatappbackend-xgh0.onrender.com/customer/addCustomer",{
                 Customer_name, Mobile_number, Customer_group
             })
             .then(res=>{

@@ -10,7 +10,7 @@ export default function AddItem() {
     const [groupOptions, setGroupOptions] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/itemgroup/GetItemgroupList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/itemgroup/GetItemgroupList")
             .then(res => {
                 if (res.data.success) {
                     const options = res.data.result.map(item => item.Item_group);
@@ -25,7 +25,7 @@ export default function AddItem() {
     async function submit(e){
         e.preventDefault();
         try{
-            await axios.post("http://localhost:8000/item/addItem",{
+            await axios.post("https://chatappbackend-xgh0.onrender.com/item/addItem",{
                 Item_name, Item_group
             })
             .then(res=>{

@@ -12,7 +12,7 @@ export default function AddUser() {
     const [groupOptions, setGroupOptions] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/usergroup/GetUsergroupList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/usergroup/GetUsergroupList")
             .then(res => {
                 if (res.data.success) {
                     const options = res.data.result.map(item => item.User_group);
@@ -27,7 +27,7 @@ export default function AddUser() {
     async function submit(e){
         e.preventDefault();
         try{
-            await axios.post("http://localhost:8000/user/addUser",{
+            await axios.post("https://chatappbackend-xgh0.onrender.com/user/addUser",{
                 User_name, Password, Mobile_number, User_group
             })
             .then(res=>{

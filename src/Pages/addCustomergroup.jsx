@@ -12,7 +12,7 @@ export default function AddCustGroup() {
         e.preventDefault();
         try{
 
-            await axios.post("http://localhost:8000/customergroup/addCustomergroup",{
+            await axios.post("https://chatappbackend-xgh0.onrender.com/customergroup/addCustomergroup",{
                 Customer_group
             })
             .then(res=>{

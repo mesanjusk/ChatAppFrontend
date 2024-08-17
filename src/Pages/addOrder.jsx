@@ -19,7 +19,7 @@ export default function AddOrder() {
     const [userOptions,setUserOptions]=useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:8000/customer/GetCustomersList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/customer/GetCustomersList")
             .then(res => {
                 if (res.data.success) {
                     const options = res.data.result.map(item => item.Customer_name);
@@ -32,7 +32,7 @@ export default function AddOrder() {
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/taskgroup/GetTaskgroupList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/taskgroup/GetTaskgroupList")
             .then(res => {
                 if (res.data.success) {
                     const options = res.data.result.map(item => item.Task_group);
@@ -45,7 +45,7 @@ export default function AddOrder() {
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/priority/GetPriorityList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/priority/GetPriorityList")
             .then(res => {
                 if (res.data.success) {
                     const options = res.data.result.map(item => item.Priority_name);
@@ -58,7 +58,7 @@ export default function AddOrder() {
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/item/GetItemList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/item/GetItemList")
             .then(res => {
                 if (res.data.success) {
                     const options = res.data.result.map(item => item.Item_name);
@@ -71,7 +71,7 @@ export default function AddOrder() {
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/user/GetUserList")
+        axios.get("https://chatappbackend-xgh0.onrender.com/user/GetUserList")
             .then(res => {
                 if (res.data.success) {
                     const options = res.data.result.map(item => item.User_name);
@@ -86,7 +86,7 @@ export default function AddOrder() {
     async function submit(e){
         e.preventDefault();
         try{
-            const response = await axios.post("http://localhost:8000/order/addOrder",{
+            const response = await axios.post("https://chatappbackend-xgh0.onrender.com/order/addOrder",{
                 Customer_name, Delivery_Date, Priority, Item, Task, Assigned, Remark
             });
             
