@@ -41,7 +41,7 @@ export default function Login() {
 
     return (
         <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
-            <div className="bg-white p-3 rounded w-25">
+            <div className="bg-white p-3 rounded w-90">
                 <h1>Login</h1>
                 <form onSubmit={submit}>
                     <div className="mb-3">
@@ -66,7 +66,7 @@ export default function Login() {
                             required
                         />
                     </div>
-                    <button type="submit" className="btn btn-success w-100 rounded-0">Submit</button>
+                    <button type="submit" className="w-100 h-10 bg-blue-500 text-white shadow-lg flex items-center justify-center">Submit</button>
                 </form>
             </div>
         </div>

@@ -108,7 +108,7 @@ export default function AddOrder() {
     return (
         <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
            
-            <div className="bg-white p-3 rounded w-25">
+            <div className="bg-white p-3 rounded w-90">
             <h2>Add Order</h2>
 
             <form action="POST">    
@@ -182,7 +182,7 @@ export default function AddOrder() {
                 </div>
 
 
-                <button type="submit" onClick={submit} className="btn btn-success w-100 rounded-0"> Submit </button>
+                <button type="submit" onClick={submit} className="w-100 h-10 bg-blue-500 text-white shadow-lg flex items-center justify-center"> Submit </button>
 
             </form>
             </div>
