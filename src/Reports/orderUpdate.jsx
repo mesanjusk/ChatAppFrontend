@@ -120,7 +120,7 @@ export default function OrderUpdate() {
             </form>
         </div>
         <div className="fixed bottom-16 left-8">
-                    <button className="w-24 h-10 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center">
+                    <button  className="w-24 h-10 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center">
                         UPDATE
                     </button>
                 </div>
