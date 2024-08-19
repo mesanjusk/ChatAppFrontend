@@ -70,17 +70,17 @@ export default function OrderUpdate() {
 
     return (
         <div className="bg-gray-100 p-4 flex flex-col w-90 h-screen">
-            
+             <div className="self-start bg-white p-2 rounded-lg max-w-xs">
+                    <label className="text-black"  >{values.Customer_name} </label>
+                    
+                    </div>
             <div >
            
             <div className="bg-white p-3 rounded ">
            
             <form action="POST">
             <div className="flex flex-col space-y-4">
-                    <div className="self-start bg-white p-2 rounded-lg max-w-xs">
-                    <label className="text-black"  >{values.Customer_name} </label>
-                    
-                    </div>
+                   
                    
                     <div className="self-start bg-white p-2 rounded-lg max-w-xs">
                     <select 
