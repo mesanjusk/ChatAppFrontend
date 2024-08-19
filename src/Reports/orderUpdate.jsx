@@ -69,29 +69,19 @@ export default function OrderUpdate() {
     };
 
     return (
-        <div className="bg-gray-100 p-4 flex flex-col h-screen">
-            <div className="flex-1 overflow-auto">
-                <div className="flex flex-col space-y-4">
+        <div className="bg-gray-100 p-4 flex flex-col w-90 h-screen">
+            
+            <div >
+           
+            <div className="bg-white p-3 rounded ">
+           
+            <form action="POST">
+            <div className="flex flex-col space-y-4">
                     <div className="self-start bg-white p-2 rounded-lg max-w-xs">
-                    <select 
-                    className="form-control rounded-0"
-                    value={values.Customer_name}
-                    onChange={(e) => setValues({ ...values, Customer_name: e.target.value })}
-                >
-                    <option value="">Select Customer</option>
-                    {customerOptions.map((option, index) => (
-                        <option key={index} value={option}>{option}</option>
-                    ))}
-                </select>
+                    <label className="text-black"  >{values.Customer_name} </label>
+                    
                     </div>
-                    <div className="self-end bg-green-500 text-white p-2 rounded-lg max-w-xs">
-                        <input 
-                            type="date"  
-                            value={values.Delivery_Date} 
-                            onChange={(e) => setValues({ ...values, Delivery_Date: e.target.value })} 
-                            placeholder="Delivery Date"
-                        />
-                    </div>
+                   
                     <div className="self-start bg-white p-2 rounded-lg max-w-xs">
                     <select 
                     className="form-control rounded-0"
@@ -104,11 +94,8 @@ export default function OrderUpdate() {
                     ))}
                 </select>
                     </div>
-                </div>
-            </div>
-
-            <div className="mt-4 flex items-center space-x-2">
-                <select 
+                    <div className="self-start bg-white p-2 rounded-lg max-w-xs">
+            <select 
                     className="form-control rounded-0"
                     value={values.Assigned}
                     onChange={(e) => setValues({ ...values, Assigned: e.target.value })}
@@ -118,11 +105,34 @@ export default function OrderUpdate() {
                         <option key={index} value={option}>{option}</option>
                     ))}
                 </select>
-
-                <button className="bg-blue-500 text-white p-2 rounded-lg" onClick={handleSaveChanges}>
-                    Save
-                </button>
-            </div>
+                </div>
+                <div className="self-start bg-white p-2 rounded-lg max-w-xs">
+                        <input 
+                            type="date"  
+                            value={values.Delivery_Date} 
+                            onChange={(e) => setValues({ ...values, Delivery_Date: e.target.value })} 
+                            placeholder="Delivery Date"
+                        />
+                    </div>
+                <button onClick={handleSaveChanges} type="submit"  className="btn btn-success w-100 rounded-0"> Submit </button>
+                
+                </div>
+            </form>
         </div>
+        <div className="fixed bottom-16 left-8">
+                    <button className="w-24 h-10 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center">
+                        UPDATE
+                    </button>
+                </div>
+
+                <div className="fixed bottom-16 right-8">
+                    <button  className="w-24 h-10 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center">
+                        INVOICE
+                    </button>
+                </div>
+        </div>
+        </div>
+       
+        
     );
 }
