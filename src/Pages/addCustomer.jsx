@@ -35,7 +35,7 @@ export default function AddCustomer() {
                 }
                 else if(res.data=="notexist"){
                     alert("Customer added successfully")
-                    navigate("/home")
+                    navigate("/allOrder")
                 }
             })
             .catch(e=>{

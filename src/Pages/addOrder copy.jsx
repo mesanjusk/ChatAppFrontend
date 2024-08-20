@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
-import AddCustomer from './addCustomer';
 
 export default function AddOrder() {
     const navigate = useNavigate();
@@ -84,11 +83,6 @@ export default function AddOrder() {
             });
     }, []);
 
-
-    function addCustomer() {
-        navigate("/addCustomer");
-    }
-
     async function submit(e){
         e.preventDefault();
         try{
@@ -128,13 +122,25 @@ export default function AddOrder() {
                                 ))
                             }
                         </select>
-                        
                 </div>
-                <button onClick={addCustomer} className="w-5 h-5 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center">
-                        +
-                
-                    </button>
-                    <div className="mb-3">
+                <div className="mb-3">
+                    <label htmlFor="deliverydate"><strong>Delivery Date</strong></label>
+                <input type="date" autoComplete="off" onChange={(e) => { setDelivery_Date(e.target.value) }} placeholder="Delivery Date" className="form-control rounded-0" />
+                </div>
+
+                <div className="mb-3">
+                <label htmlFor="priority"><strong>Priority Name</strong></label>
+                <select className="form-control rounded-0" onChange={(e) => setPriority(e.target.value)} value={Priority}>
+                            <option value="">Select Priority</option>
+                           
+                               { priorityOptions.map((option, index) => (
+                                    <option key={index} value={option}>{option}</option>
+                                ))
+                            }
+                        </select>
+                </div>
+
+                <div className="mb-3">
                 <label htmlFor="item"><strong>Item Name</strong></label>
                 <select className="form-control rounded-0" onChange={(e) => setItem(e.target.value)} value={Item}>
                             <option value="">Select Item</option>
@@ -145,14 +151,6 @@ export default function AddOrder() {
                             }
                         </select>
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="remark"><strong>Order</strong></label>
-                <input type="remark" autoComplete="off" onChange={(e) => { setRemark(e.target.value) }} placeholder="Order Details" className="form-control rounded-0" />
-                </div>
-               
-                
-
-                
 
                 <div className="mb-3">
                 <label htmlFor="task"><strong>Task Name</strong></label>
@@ -179,20 +177,8 @@ export default function AddOrder() {
                 </div>
 
                 <div className="mb-3">
-                    <label htmlFor="deliverydate"><strong>Delivery Date</strong></label>
-                <input type="date" autoComplete="off" onChange={(e) => { setDelivery_Date(e.target.value) }} placeholder="Delivery Date" className="form-control rounded-0" />
-                </div>
-
-                <div className="mb-3">
-                <label htmlFor="priority"><strong>Priority Name</strong></label>
-                <select className="form-control rounded-0" onChange={(e) => setPriority(e.target.value)} value={Priority}>
-                            <option value="">Select Priority</option>
-                           
-                               { priorityOptions.map((option, index) => (
-                                    <option key={index} value={option}>{option}</option>
-                                ))
-                            }
-                        </select>
+                    <label htmlFor="remark"><strong>Remark</strong></label>
+                <input type="remark" autoComplete="off" onChange={(e) => { setRemark(e.target.value) }} placeholder="Remark" className="form-control rounded-0" />
                 </div>
 
 
