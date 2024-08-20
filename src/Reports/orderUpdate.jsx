@@ -70,20 +70,20 @@ export default function OrderUpdate() {
 
     return (
         <div className="bg-gray-100 p-4 flex flex-col w-90 h-screen">
-             <div className="self-start bg-white p-2 rounded-lg max-w-xs">
-                    <label className="text-black"  >{values.Customer_name} </label>
-                    
-                    </div>
+             <header className="bg-blue-100 text-black p-2 shadow-md">
+        <h2 className="text-xl font-bold">{values.Customer_name}</h2>
+      </header>
+            
             <div >
            
-            <div className="bg-white p-3 rounded ">
+            <div className="bg-white p-3  ">
            
             <form action="POST">
             <div className="flex flex-col space-y-4">
                    
                    
                     <div className="self-start bg-white p-2 rounded-lg max-w-xs">
-                    <select 
+                    Update Status <select 
                     className="form-control rounded-0"
                     value={values.Task}
                     onChange={(e) => setValues({ ...values, Task: e.target.value })}
@@ -95,6 +95,7 @@ export default function OrderUpdate() {
                 </select>
                     </div>
                     <div className="self-start bg-white p-2 rounded-lg max-w-xs">
+           Update User 
             <select 
                     className="form-control rounded-0"
                     value={values.Assigned}
@@ -114,7 +115,7 @@ export default function OrderUpdate() {
                             placeholder="Delivery Date"
                         />
                     </div>
-                <button onClick={handleSaveChanges} type="submit"  className="btn btn-success w-100 rounded-0"> Submit </button>
+                <button onClick={handleSaveChanges} type="submit"  className="btn bg-blue-500 w-100 text-white rounded-0"> Submit </button>
                 
                 </div>
             </form>
