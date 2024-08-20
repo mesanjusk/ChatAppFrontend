@@ -101,9 +101,10 @@ export default function AllOrder() {
                                         <div className="w-10 h-10 bg-blue-100 text-Black rounded-full shadow-lg flex items-center justify-center"> {order.Order_Number}</div>
                                         <div className="p-2 w-70 basis-1/2">
                                             <strong className="text-xl-blue-900">{order.Customer_name}</strong>
-                                            <br />{formatDate(order.Delivery_Date)}
+                                            <br />{order.Remark}
                                         </div>
-                                        <div className="w-30 h-10 bg-blue-100 flex-1 ... basis-1/4 text-Black p-2 rounded flex items-center justify-center">{order.Assigned}</div>
+                                        <div className="w-20 h-10 bg-blue-100 flex-1 ... basis-1/6 text-Black p-2 rounded flex items-center justify-center">{order.Assigned}</div>
+                                        <div className="w-10 h-10 bg-blue-400  text-Black p-1 rounded-full flex items-center justify-center"></div>
                                     </div>
                                 </div>
                             ))

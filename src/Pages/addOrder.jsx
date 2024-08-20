@@ -98,7 +98,7 @@ export default function AddOrder() {
             
             if (response.data.success) {
                 alert(response.data.message);
-                navigate("/home");
+                navigate("/allOrder");
             } else {
                 alert("Failed to add order");
             }

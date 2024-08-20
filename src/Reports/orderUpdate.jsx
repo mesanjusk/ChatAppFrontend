@@ -54,6 +54,7 @@ export default function OrderUpdate() {
             ...values,
             Delivery_Date: formattedDate
         };
+        navigate("/allOrder");
 
 
         axios.put(`https://chatappbackend-xgh0.onrender.com/order/updateOrder/${id}`, updatedValues)
@@ -69,9 +70,12 @@ export default function OrderUpdate() {
     };
 
     return (
-        <div className="bg-gray-100 p-4 flex flex-col w-90 h-screen">
-             <header className="bg-blue-100 text-black p-2 shadow-md">
+        
+        <div className="bg-gray-100 p-4 flex-1 ... basis-1/1 w-90 h-screen">
+           
+             <header className="bg-blue-100 flex overflow-y-auto text-black p-2 shadow-md">
         <h2 className="text-xl font-bold">{values.Customer_name}</h2>
+        <div className="w-10 h-10 bg-blue-400  flex-4  basis-1/1 text-Black p-1 rounded-full "></div>
       </header>
             
             <div >
@@ -82,7 +86,7 @@ export default function OrderUpdate() {
             <div className="flex flex-col space-y-4">
                    
                    
-                    <div className="self-start bg-white p-2 rounded-lg max-w-xs">
+                    <div className="self-start bg-white p-2 w-100 rounded-lg max-w-xs">
                     Update Status <select 
                     className="form-control rounded-0"
                     value={values.Task}
@@ -94,7 +98,7 @@ export default function OrderUpdate() {
                     ))}
                 </select>
                     </div>
-                    <div className="self-start bg-white p-2 rounded-lg max-w-xs">
+                    <div className="self-start bg-white p-2 w-100 rounded-lg max-w-xs">
            Update User 
             <select 
                     className="form-control rounded-0"
